@@ -1,0 +1,12 @@
+<div (click)="interrupteur()" [ngClass]="{
+    'allume': isAllume,
+    'eteinte': !isAllume
+  }">ampoule</div>
+
+<input type="text" appRainbow>
+
+<div appHighlight>test </div>
+<div appHighlight [in]="'white'" [out]="'blue'">test </div>
+<div appHighlight [in]="'white'" [out]="'red'">test </div>
+<div appHighlight [in]="'white'" [out]="'black'">test </div>
+<div appHighlight [in]="'white'" [out]="'green'">test </div>

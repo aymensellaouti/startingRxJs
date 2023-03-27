@@ -1,0 +1,10 @@
+<p>{{name}} works!</p>
+<p [hidden]="isHidden">In First</p>
+<app-second></app-second>
+<input #myInput (change)="changeMessage(myInput.value)" type="text">
+<button (click)="showHide()" class="btn btn-danger">
+  show / hide
+</button>
+<p>
+  Le contenu de l'input est: {{message}}
+</p>
