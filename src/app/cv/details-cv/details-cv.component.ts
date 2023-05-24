@@ -22,8 +22,8 @@ export class DetailsCvComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
-      this.cvService.getCvById(params['id']).subscribe({
+    const id = this.activatedRoute.snapshot.params['id'];
+    this.cvService.getCvById(+id).subscribe({
         next: (cv) => {
           this.cv = cv;
         },
@@ -31,7 +31,6 @@ export class DetailsCvComponent implements OnInit {
           this.router.navigate([APP_ROUTES.cv]);
         },
       });
-    });
   }
   deleteCv(cv: Cv) {
     this.cvService.deleteCvById(cv.id).subscribe({
