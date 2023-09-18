@@ -3,16 +3,14 @@ import { Cv } from "../model/cv";
 import { LoggerService } from "../../services/logger.service";
 import { ToastrService } from "ngx-toastr";
 import { CvService } from "../services/cv.service";
-import { EMPTY, Observable, catchError, of } from "rxjs";
 @Component({
-  selector: "app-cv",
-  templateUrl: "./cv.component.html",
-  styleUrls: ["./cv.component.css"],
+  selector: 'app-cv',
+  templateUrl: './cv.component.html',
+  styleUrls: ['./cv.component.css'],
 })
 export class CvComponent {
   cvs: Cv[] = [];
-  nbClickItem = 0;
-  /*   selectedCv: Cv | null = null; */
+  selectedCv: Cv | null = null;
   date = new Date();
 
   constructor(
@@ -31,8 +29,11 @@ export class CvComponent {
           Veuillez contacter l'admin.`);
       },
     });
-    this.logger.logger("je suis le cvComponent");
-    this.toastr.info("Bienvenu dans notre CvTech");
-    this.cvService.selectCv$.subscribe(() => this.nbClickItem++);
+    this.logger.logger('je suis le cvComponent');
+    this.toastr.info('Bienvenu dans notre CvTech');
+  }
+
+  getSelectedCv(cv:Cv) {
+    this.selectedCv = cv;
   }
 }
