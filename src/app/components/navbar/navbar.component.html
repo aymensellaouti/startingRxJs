@@ -15,8 +15,6 @@
         <a *ngIf="authService.isAuthenticated()" class="nav-link" [routerLink]="['cv/add']"
           routerLinkActive="active text-primary">Add Cv</a>
         <a class="nav-link" [routerLink]="['todo']" routerLinkActive="active text-primary">Todo</a>
-        <a class="nav-link" [routerLink]="['word']" routerLinkActive="active text-primary">Word</a>
-        <a class="nav-link" [routerLink]="['color']" routerLinkActive="active text-primary">Color</a>
         <a *ngIf="!authService.isAuthenticated()" class="nav-link" [routerLink]="['login']"
           routerLinkActive="active text-primary">Login</a>
         <a *ngIf="authService.isAuthenticated()" class="nav-link" (click)="logout()">Logout</a>
