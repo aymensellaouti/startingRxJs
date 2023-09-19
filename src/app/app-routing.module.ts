@@ -9,6 +9,7 @@ import { CvComponent } from './cv/cv/cv.component';
 import { DetailsCvComponent } from './cv/details-cv/details-cv.component';
 
 const routes: Route[] = [
+  { path: '', redirectTo: "cv", pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   {
     path: 'cv',
